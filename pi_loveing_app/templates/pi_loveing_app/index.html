@@ -1,0 +1,33 @@
+{% load static tailwind_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% tailwind_css %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pi loving app</title>
+</head>
+<body>
+    <h1 class="uppercase text-5xl text-center font-bold text-orange-400 my-24">Pi lovers restuarant</h1>
+
+
+    <!-- cards showing now -->
+    <div class="mx-auto my-6 flex max-w-[1200px] grid grid-cols-1 gap-4 md:grid-cols-4">
+    {% for i in meals %}
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <a href="#">
+                <img class="rounded-t-lg" src="{{ i.strMealThumb }}" alt="" />
+            </a>
+            <div class="p-5">
+                <a href="#">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ i.strMeal }}</h5>
+                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi esse assumenda suscipit placeat deserunt ut, </p>
+                
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
